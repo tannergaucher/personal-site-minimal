@@ -3,7 +3,6 @@ import logo from './logo.svg'
 import profile from './avatar.jpg'
 import styled from 'styled-components'
 
-import './App.css'
 import {
   Container,
   Lead,
