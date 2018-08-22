@@ -3,52 +3,29 @@ import logo from './logo.svg'
 import profile from './avatar.jpg'
 import styled from 'styled-components'
 
-import {
-  Container,
-  Lead,
-  Subhead,
-  Divider,
-  Samp,
-  Avatar,
-  BlockLink,
-  Flex,
-  Box,
-  Image
-} from 'rebass'
+import { Container, Subhead, Image } from 'rebass'
 
 import computer from './computer.png'
 
-import { Subhead as Base } from 'rebass'
-
-const MyDivider = styled(Divider)`
+const Line = styled.hr`
   border: 2px solid;
+  background: black;
 `
 
-const Link = props => (
-  <Subhead
-    {...props}
-    css={{
-      '&:hover': {
-        color: 'teal',
-        transition: '.2s ease-in-out',
-        cursor: 'pointer'
-      }
-    }}
-  />
-)
-
-const Project = props => (
-  <Subhead
-    {...props}
-    css={{
-      '&:hover': {
-        color: 'fuchsia',
-        transition: '.2s ease-in-out',
-        cursor: 'pointer'
-      }
-    }}
-  />
-)
+const ContactLink = styled.a`
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: teal;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
+`
+const ProjectLink = ContactLink.extend`
+  &:hover {
+    color: fuchsia;
+  }
+`
 
 class App extends Component {
   render() {
@@ -62,36 +39,35 @@ class App extends Component {
           ml={5}
           mb={4}
         />
-        <MyDivider />
-        <Link href="https://github.com/tannergaucher" target="_new">
+        <Line />
+        <ContactLink href="https://github.com/tannergaucher" target="_new">
           <Subhead children="GitHub" fontSize={[4, 5, 6]} ml={5} mt={4} />
-        </Link>
-        <Link href="#!">
+        </ContactLink>
+        <ContactLink href="#!">
           <Subhead children="Writing" fontSize={[4, 5, 6]} ml={5} />
-        </Link>
-        <Link href="#!">
+        </ContactLink>
+        <ContactLink href="#!">
           <Subhead children="Contact" fontSize={[4, 5, 6]} ml={5} mb={4} />
-        </Link>
-        <MyDivider w={5} fontSize={[4, 5, 6]} borderColor="black" />
-        <Project>
+        </ContactLink>
+        <Line w={5} fontSize={[4, 5, 6]} borderColor="black" />
+        <ProjectLink>
           <Subhead
             children="6 Minute Morning"
             fontSize={[4, 5, 6]}
             ml={5}
             mt={4}
           />
-        </Project>
-        <Project href="#!">
+        </ProjectLink>
+        <ProjectLink href="#!">
           <Subhead children="Work Smart" fontSize={[4, 5, 6]} ml={5} />
-        </Project>
-        <Project>
+        </ProjectLink>
+        <ProjectLink>
           <Subhead children="Work{space}" fontSize={[4, 5, 6]} ml={5} />
-        </Project>
-        <Project>
+        </ProjectLink>
+        <ProjectLink>
           <Subhead children="TinderMap" fontSize={[4, 5, 6]} ml={5} mb={5} />
-        </Project>
-        <MyDivider />
-        {/* <Image src={computer} /> */}
+        </ProjectLink>
+        <Image src={computer} />
       </Container>
     )
   }
