@@ -27,6 +27,14 @@ const ProjectLink = ContactLink.extend`
   }
 `
 
+const ComputerWrapper = styled.div`
+  position: absolute;
+`
+
+const ProjectWrapper = styled.div`
+  position: relative;
+`
+
 class App extends Component {
   render() {
     return (
@@ -50,24 +58,34 @@ class App extends Component {
           <Subhead children="Contact" fontSize={[4, 5, 6]} ml={5} mb={4} />
         </ContactLink>
         <Line w={5} fontSize={[4, 5, 6]} borderColor="black" />
-        <ProjectLink>
-          <Subhead
-            children="6 Minute Morning"
-            fontSize={[4, 5, 6]}
-            ml={5}
-            mt={4}
-          />
-        </ProjectLink>
-        <ProjectLink href="#!">
-          <Subhead children="Work Smart" fontSize={[4, 5, 6]} ml={5} />
-        </ProjectLink>
-        <ProjectLink>
-          <Subhead children="Work{space}" fontSize={[4, 5, 6]} ml={5} />
-        </ProjectLink>
-        <ProjectLink>
-          <Subhead children="TinderMap" fontSize={[4, 5, 6]} ml={5} mb={5} />
-        </ProjectLink>
-        <Image src={computer} />
+
+        <ComputerWrapper>
+          <ProjectWrapper>
+            <ProjectLink>
+              <Subhead
+                children="6 Minute Morning"
+                fontSize={[4, 5, 6]}
+                ml={5}
+                mt={4}
+              />
+            </ProjectLink>
+            <ProjectLink href="#!">
+              <Subhead children="Work Smart" fontSize={[4, 5, 6]} ml={5} />
+            </ProjectLink>
+            <ProjectLink>
+              <Subhead children="Work{space}" fontSize={[4, 5, 6]} ml={5} />
+            </ProjectLink>
+            <ProjectLink>
+              <Subhead
+                children="TinderMap"
+                fontSize={[4, 5, 6]}
+                ml={5}
+                mb={5}
+              />
+            </ProjectLink>
+          </ProjectWrapper>
+          <Image src={computer} />
+        </ComputerWrapper>
       </Container>
     )
   }
